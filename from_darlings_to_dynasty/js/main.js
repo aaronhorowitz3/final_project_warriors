@@ -9,11 +9,54 @@ $(window).on('scroll', function () {
   console.log(distanceScrolled);
 
 if (distanceScrolled > 590) {
-  $('#main-nav').addClass('scrolled');
+  $('nav').addClass('scrolled');
 } else {
-  $('#main-nav').removeClass('scrolled');
+  $('nav').removeClass('scrolled');
+};
+if (distanceScrolled > 520) {
+  $('#hamburger-icon').addClass('scrolled');
+} else {
+  $('#hamburger-icon').removeClass('scrolled');
 };
 });
+
+
+
+$('button').on('mouseover', function () {
+  $('button').addClass('buttonhover');
+});
+
+$('button').on('mouseout', function() {
+  $('button').removeClass('buttonhover');
+});
+
+$(document).ready(function(){
+  $(".hamburger-icon").click(function(){
+    $(this).toggleClass("is-active");
+  });
+});
+
+$("#hamburger-icon").on('click', function () {
+  $('#main').toggleClass('slide-main');
+  $('#mySidenav').toggleClass('open-nav');
+});
+// function openNav() {
+//   document.getElementById("mySidenav").style.width = "200px";
+//   document.getElementById("main").style.marginLeft = "200px";
+// };
+//
+// function closeNav() {
+//   document.getElementById("mySidenav").style.width = "0";
+//   document.getElementById("main").style.marginLeft = "0";
+// }
+// $('#full-name').on('click', function () {
+//   $('#full-name').addClass('borderhighlight');
+// });
+//
+// $('#full-name').click(function(event) {
+//   event.stopPropagation();
+//   $('#full-name').removeClass('borderhighlight');
+// });
 // When a user clicks on a given list item in the Broken Records section:
   //Show the corresponding description
   //Hide all other descriptions
